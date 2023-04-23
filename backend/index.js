@@ -6,7 +6,10 @@ const userRoutes = require("./Routes/userRoutes");
 const booksRoutes = require("./Routes/booksRoutes")
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin:"http://localhost:3000",
+    credentials:true
+}));
 const port = process.env.port || 8000;
 
 app.listen((port),()=>{

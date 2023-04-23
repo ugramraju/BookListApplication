@@ -72,7 +72,7 @@ router.get("/currentuser",middleware, async(req,res)=>{
         if(!user){
             return res.status(400).send("user Not Available")
         }
-       return res.status(200).send({user})
+       return res.json({user})
     }
     catch(err){
         console.log(err);
