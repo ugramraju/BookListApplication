@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios"
+import axios from "axios";
+import "./BooksData.css"
 const DisplayData = ()=>{
     const[booksData,setBooksData] = useState([]);
     const [selectedBook, setSelectedBook] = useState(null);
     const[editMode, setEditMode] = useState("");
-
+   
     useEffect(()=>{
         fetch("http://localhost:8000/api/booksget")
         .then(res=>res.json())
@@ -114,27 +115,33 @@ const DisplayData = ()=>{
                 </div>
             )
         }
-        <div>
+
+        <div className="maincontainer">
         <h1 className="books_heading">Books List</h1>
         <button type="submit"><Link to="/booksform">+ Add New Book</Link></button>
+        
+        <div className="container">
+        
         {
             booksData.map((each)=>{
                 return(
-                    <div key={each._id}>
-                        <div>Title: {each.title_of_the_book}</div>
-                        <div>ISBN: {each.isbn}</div>
-                        <div>Author: {each.author}</div>
-                        <div>Publisher: {each.publisher_of_this_book}</div>
-                        <div>Published Date: {each.published_date}</div> 
-                        <div>Description: {each.describe_this_book}</div>
-                        <div>
+                        <div key={each._id} className="card">
+                        <div><span>Title:</span> {each.title_of_the_book}</div>
+                        <div><span>ISBN:</span> {each.isbn}</div>
+                        <div><span>Author:</span> {each.author}</div>
+                        <div><span>Publisher:</span> {each.publisher_of_this_book}</div>
+                        <div><span>Published Date: </span>{each.published_date}</div> 
+                        <div><span>Description:</span> {each.describe_this_book}</div>
+                        <div className="btns">
                             <button onClick={()=>deleteHandler(each._id)}>Delete Book</button>
                             <button onClick={()=>editHandler(each)}>Edit Book</button>
                         </div>
+
                     </div>
                 )
             })
         }
+        </div>
         </div>
         </>
     )

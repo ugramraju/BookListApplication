@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import {Link,useNavigate} from "react-router-dom"
+import {Link,useNavigate} from "react-router-dom";
+import "./Registration.css"
 const Registration=()=>{
     const navigate = useNavigate()
     const [data,setData] = useState({});
@@ -32,7 +33,8 @@ const Registration=()=>{
         })
     }
     return(
-        <div>
+        <div className="maincontainer">
+            <div className="container">
             <h1>Register</h1>
             <span id="err_msg">{msg}</span>
             <span id="err_msg_1">{msg1}</span>
@@ -58,11 +60,12 @@ const Registration=()=>{
                 onChange={(e)=>setData({...data,confirmpassword:e.target.value,password:data.password})}
                 />
                 <br/>
-                <button type="submit" id="btn" onClick={handleSubmit}>REGISTER</button>
+                <input type="submit" id="btn" onClick={handleSubmit} value="REGISTER"/>
             </form>
-            <span onClick={handleLogin} id="sign_btn">
+            <p onClick={handleLogin} id="sign_btn">
                 <Link to="/login">Member Login</Link>
-            </span>
+            </p>
+        </div>
         </div>
     )
 }

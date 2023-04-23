@@ -18,6 +18,8 @@ app.listen((port),()=>{
 app.use("/api/user",userRoutes);
 app.use("/api",booksRoutes)
 mongoose.connect(process.env.mongoose_connection,{
-   
+   useUnifiedTopology:true,
+   useNewUrlParser:true
+
 
 }).then(()=>console.log("DataBase Connected SuccessFully"))

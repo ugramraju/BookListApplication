@@ -1,0 +1,42 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 15em;
+    background-color: aqua;
+    padding: 10px;
+    gap: 10px;
+    text-align: left;
+}
+.container{
+    display: flex;
+    gap: 5%;
+    margin: auto;
+    margin-top: 3em;
+    flex-wrap: nowrap;
+}
+.maincontainer{
+    background-color: rgb(43, 42, 42);
+    width: 80%;
+    height:max-content
+}
+.maincontainer>button{
+    margin-left: auto;
+    margin-right: 2em;
+    text-decoration: none;
+    background-color: yellow;
+    width:15%;
+    height: 3em;
+    font-weight: bold;
+}
+.maincontainer>h1{
+    color: white;
+    font-size: 3em;
+}
+.card div span{
+    font-weight: bold;
+}
+.btns >button{
+background-color: blue;
+color: white;
+margin: 5px;
+}
