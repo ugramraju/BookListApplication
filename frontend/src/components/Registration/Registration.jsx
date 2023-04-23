@@ -21,7 +21,7 @@ const Registration=()=>{
             setErrMsg("Password And Confirm Passwords are not MAtched!")
             return;
         }
-        axios.post("http://localhost:8000/api/user/registration", data)
+        axios.post("https://booklistapplication.onrender.com/api/user/registration", data)
         .then((res)=>{
             setData({});
             setErrMsg("");

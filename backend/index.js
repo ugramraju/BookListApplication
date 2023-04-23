@@ -7,7 +7,7 @@ const booksRoutes = require("./Routes/booksRoutes")
 const app = express();
 app.use(express.json());
 app.use(cors({
-    origin:"http://localhost:3000",
+    origin:"https://gleaming-mochi-1548f8.netlify.app/",
     credentials:true
 }));
 const port = process.env.port || 8000;

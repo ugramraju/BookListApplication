@@ -26,7 +26,7 @@ const BooksForm=()=>{
             return;
         }
         try{
-            const res = await axios.post("http://localhost:8000/api/bookspost",data);
+            const res = await axios.post("https://booklistapplication.onrender.com/api/bookspost",data);
             console.log(res.data)
             setData({title_of_the_book:"",
             isbn:"",

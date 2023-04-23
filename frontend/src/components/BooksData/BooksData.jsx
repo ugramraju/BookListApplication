@@ -8,7 +8,7 @@ const DisplayData = ()=>{
     const[editMode, setEditMode] = useState("");
    
     useEffect(()=>{
-        fetch("http://localhost:8000/api/booksget")
+        fetch("https://booklistapplication.onrender.com/api/booksget")
         .then(res=>res.json())
         .then((data)=>setBooksData(data.data))
         .catch((err)=>console.log(err))
@@ -18,7 +18,7 @@ const DisplayData = ()=>{
         try{
             const confirmed = window.confirm("Sure You Want To Delete It!");
             if(confirmed){
-                await axios.delete(`http://localhost:8000/api/bookdelete/${id}`);
+                await axios.delete(`https://booklistapplication.onrender.com/api/bookdelete/${id}`);
                 setBooksData(booksData.filter((eachData)=>eachData._id !== id))
             }
         }
@@ -33,7 +33,7 @@ const DisplayData = ()=>{
     };
     const handleSave=async(id)=>{
         try{
-            const updateBook = await axios.put(`http://localhost:8000/api/booksEdit/${id}`,selectedBook);
+            const updateBook = await axios.put(`https://booklistapplication.onrender.com/api/booksEdit/${id}`,selectedBook);
             setBooksData(booksData.map((eachData)=>{
                 if(eachData._id === updateBook.data._id){
                     return updateBook.data;
