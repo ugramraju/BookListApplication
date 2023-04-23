@@ -23,6 +23,7 @@ const navigate=useNavigate()
       console.log(res)
     } catch (err) {
       setErrormsg("Invalid username or password");
+      console.error(err);
     }
   };
 
