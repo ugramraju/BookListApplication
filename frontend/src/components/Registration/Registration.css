@@ -1,4 +1,4 @@
-.maincontainer{
+.maincontainer34{
     margin: auto;
     width: 40%;
     height:30em;
@@ -8,12 +8,12 @@
     align-items: center;
     justify-content: center;
 }
-.container{
+.container34{
     width:60%;
     height:80%;
     background-color:white;
 }
-.container>form >input{
+.container34>form >input{
     width:80%;
     height:2.5em;
     margin: 10px;
@@ -25,7 +25,7 @@
     cursor: pointer;
     border: none;
 }
-.container>p{
+.container34>p{
     text-decoration:none;
     color: red;
 }

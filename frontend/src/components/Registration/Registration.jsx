@@ -33,8 +33,8 @@ const Registration=()=>{
         })
     }
     return(
-        <div className="maincontainer">
-            <div className="container">
+        <div className="maincontainer34">
+            <div className="container34">
             <h1>Register</h1>
             <span id="err_msg">{msg}</span>
             <span id="err_msg_1">{msg1}</span>
