@@ -18,7 +18,7 @@ const navigate=useNavigate()
     try {
       const res = await axios.post("http://localhost:8000/api/user/login", data,{withCredentials:true});
       if(res.data.msg === "Login Successfully"){
-        navigate("")
+        navigate("/displaydata")
       }
       console.log(res)
     } catch (err) {
