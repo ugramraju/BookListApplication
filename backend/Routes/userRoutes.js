@@ -20,7 +20,7 @@ router.post("/registration",async(req,res)=>{
         //hasshing password
         const hassedPassword = await bcrypt.hash(password,10);
 
-        let newUser = Registeruser.create({
+        let newUser =await Registeruser.create({
             username,
             password:hassedPassword,
             confirmpassword:hassedPassword
