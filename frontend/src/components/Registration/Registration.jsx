@@ -11,7 +11,7 @@ const Registration=()=>{
     const handleLogin=(e)=>{
         e.preventDefault()
     }
-    const handleSubmit=(e)=>{
+    const handleSubmit=async(e)=>{
         e.preventDefault();
         if(!data.username || !data.password){
             setErrMsg("Kindly Fill All Details")
@@ -21,7 +21,7 @@ const Registration=()=>{
             setErrMsg("Password And Confirm Passwords are not MAtched!")
             return;
         }
-        axios.post("https://booklistapplication.onrender.com/api/user/registration", data)
+        await axios.post("https://booklistapplication.onrender.com/api/user/registration", data)
         .then((res)=>{
             setData({});
             setErrMsg("");
