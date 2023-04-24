@@ -12,11 +12,12 @@ const validateToken = asyncHandler(async(req,res,next)=>{
             }
             req.user = decoded.user;
             next();
-        })
-        if(!token){
+             if(!token){
             res.status(401)
             throw new Error("user Is not Authorized")
         }
+        })
+       
     }
 })
 module.exports = validateToken;
