@@ -31,7 +31,9 @@ const Registration=()=>{
                 navigate("/login")
             }
         })
-    }
+        .catch((error)=>{
+        console.log(error);
+    });
     return(
         <div className="maincontainer34">
             <div className="container34">
