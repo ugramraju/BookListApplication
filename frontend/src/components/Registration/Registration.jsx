@@ -21,8 +21,8 @@ const Registration=()=>{
             setErrMsg("Password And Confirm Passwords are not MAtched!")
             return;
         }
-        await axios.post("https://booklistapplication.onrender.com/api/user/registration", data)
-        .then((res)=>{
+         try {
+            const res = await axios.post("https://booklistapplication.onrender.com/api/user/registration", data);
             setData({});
             setErrMsg("");
             setErrMsg1("Registration Done!");
@@ -30,10 +30,10 @@ const Registration=()=>{
             if(res.data === "User Registered Successfully"){
                 navigate("/login")
             }
-        })
-        .catch((error)=>{
-        console.log(error);
-    });
+        } catch (error) {
+            console.log(error);
+        }
+    }
     return(
         <div className="maincontainer34">
             <div className="container34">
