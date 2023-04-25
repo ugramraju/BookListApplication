@@ -16,7 +16,7 @@ const navigate=useNavigate()
     }
 
     try {
-      const res = await axios.post("https://booklistapplication.onrender.com/api/user/login", data,{withCredentials:true});
+      const res = await axios.post("https://booklistapplication.onrender.com/api/user/login", data);
       if(res.data.msg === "Login Successfully"){
         navigate("/displaydata")
       }
