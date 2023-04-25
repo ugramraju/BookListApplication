@@ -6,10 +6,7 @@ const userRoutes = require("./Routes/userRoutes");
 const booksRoutes = require("./Routes/booksRoutes")
 const app = express();
 app.use(express.json());
-app.use(cors({
-    origin:"https://gleaming-mochi-1548f8.netlify.app",
-    credentials:true
-}));
+app.use(cors());
 const port = process.env.port || 8000;
 
 app.listen((port),()=>{
